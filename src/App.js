@@ -24,12 +24,7 @@ class Lifecycle2 extends Component {
 
   pauseOnOff = () => {
     this.setState ({pause: !this.state.pause});
-    if(!this.state.pause) {
-      clearInterval(this.state.intervalID);
-    } 
-    else {
-      this.componentDidMount(); 
-    }
+    !this.state.pause ? clearInterval(this.state.intervalID) : this.componentDidMount(); 
   };
 
   clear = () => {
